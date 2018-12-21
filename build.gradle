@@ -2,6 +2,7 @@ buildscript {
     repositories {
         jcenter()
         mavenCentral()
+        mavenLocal()
     }
 }
 
@@ -11,7 +12,7 @@ apply plugin: "application"
 mainClassName = "org.pete.javatest.Test"
 
 run {
-    args(["testing" ])
+    args(["Jim"])
     main = mainClassName
     classpath = sourceSets.main.runtimeClasspath
 }
@@ -23,3 +24,16 @@ jar {
     }
 }
 
+repositories {
+    jcenter()
+    mavenCentral()
+    mavenLocal()
+}
+dependencies {
+    testCompile "junit:junit:4.12"
+    testImplementation "junit:junit:4.12"
+}
+
+test {
+    useJUnit()
+}
